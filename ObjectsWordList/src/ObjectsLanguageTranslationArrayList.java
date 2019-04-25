@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import java.util.Collections; 
 public class ObjectsLanguageTranslationArrayList {
 
 	private static final String WordPair = null;
@@ -17,52 +17,53 @@ public class ObjectsLanguageTranslationArrayList {
 
 		System.out.print("Enter an English word: ");
 		englishWord = input.nextLine();
-		wordsList.add(new WordPair(englishWord, finnishWord));
+
 
 		while (!(englishWord.equals("ok"))) {
 			System.out.print("Enter a Finnish word: ");
 			finnishWord = input.nextLine();
-			
+
+			wordsList.add(new WordPair(englishWord, finnishWord));
+
 			System.out.println();
 
 			System.out.print("Enter an English word: ");
 			englishWord = input.nextLine();
-			wordsList.add(new WordPair(englishWord, finnishWord));
 
 		}
-		
-		System.out.println();
-		
-		System.out.println("Input:");
-		String wordInput = input.nextLine();
-		for (WordPair wordsObject : wordsList) {
-			if(wordsObject.getEnglishWord().equals(wordInput)) {
-				System.out.print(wordsObject.getFinnishWord());
-			}
-		}
-		System.out.print("no");
+
+	
 
 		// translate
 
-		/*System.out.println("=== English-Finnish translation service (quit ends) ===");
-		String inputWord = ""; 
+		System.out.println("=== English-Finnish translation service (quit ends) ===");
+		String inputWord = "";
 		System.out.print("Enter an English word: ");
-		inputWord = input.nextLine(); 
-		boolean wordFound = false;
-
-		for (int i = 0; i < wordsList.size(); i++) {
+		inputWord = input.nextLine();
 		
-			if (wordsList.get(i).getEnglishWord().equals(inputWord)) {
-				System.out.print("true");
-				wordFound = true;
+
+		while (!inputWord.equals("quit")) {
+			
+			boolean wordFound = false;
+			for (int i = 0; i < wordsList.size(); i++) {
+
+				if (wordsList.get(i).getEnglishWord().equals(inputWord)) {
+					System.out.print(wordsList.get(i).getFinnishWord());
+					
+					System.out.println("\n");
+				
+					System.out.print("Enter an English word: ");
+					inputWord = input.nextLine();
+					wordFound = true;
+				}
 			}
 			if (wordFound == false) {
-				System.out.print("Unknown word");
+				System.out.println("Unknown word");
+				System.out.println();
+				System.out.print("Enter an English word: ");
+				inputWord = input.nextLine();
 			}
-			
-		}*/
-		
-		
-	} 
+		}
+		System.out.print("Bye!");
+	}
 }
-
