@@ -22,7 +22,7 @@ public class StudentListProgram {
 			ArrayList<Student> studentList = StudentDAO.getAllStudents();
 
 			for (Student student : studentList) {
-				System.out.println(student.getFirstname() + " " + student.getLastname() + ", " + student.getStreetaddress() + ", " +student.getPostcode()+ " "+ student.getPostoffice());
+				System.out.println(student.getFirstname() + " " + student.getLastname() + ", " + student.getStreetaddress() + ", " +student.getPostcode()+ ", "+ student.getPostoffice());
 			}
 
 		} catch (Exception ex) {
